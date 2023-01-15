@@ -1,6 +1,6 @@
 import { fetchMovieDetails } from 'components/service/api';
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
@@ -46,10 +46,26 @@ export const MovieDetails = () => {
       <p>Additional information</p>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <NavLink
+            end
+            style={({ isActive }) => ({
+              color: isActive ? '#b92121' : 'inherit',
+            })}
+            to="cast"
+          >
+            Cast
+          </NavLink>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <NavLink
+            end
+            style={({ isActive }) => ({
+              color: isActive ? '#b92121' : 'inherit',
+            })}
+            to="reviews"
+          >
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <Outlet />

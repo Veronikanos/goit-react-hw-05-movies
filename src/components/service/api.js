@@ -33,8 +33,19 @@ export const getCastById = async movie_id => {
     const { data } = await trendingMovies.get(`/movie/${movie_id}/credits`, {
       language: 'en-US',
     });
-    // console.log(data);
     return data.cast;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const getReviewsById = async movie_id => {
+  try {
+    const { data } = await trendingMovies.get(`/movie/${movie_id}/reviews`, {
+      language: 'en-US',
+    });
+    console.log(data.results);
+    return data.results;
   } catch (error) {
     return error.message;
   }
