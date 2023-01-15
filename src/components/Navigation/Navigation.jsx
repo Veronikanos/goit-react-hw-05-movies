@@ -3,11 +3,21 @@ import s from './Navigation.module.css';
 
 export const Navigation = () => (
   <nav>
-    <NavLink exact to="/" className={s.link} activeClassName={s.active}>
+    <NavLink
+      end
+      style={({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })}
+      className={s.link}
+      to="/"
+    >
       Home
     </NavLink>
 
-    <NavLink to="/movies" className={s.link} activeClassName={s.active}>
+    <NavLink
+      end
+      style={({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })}
+      className={s.link}
+      to="/movies"
+    >
       Movies
     </NavLink>
   </nav>
