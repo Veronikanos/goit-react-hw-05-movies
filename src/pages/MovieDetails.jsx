@@ -26,7 +26,7 @@ export const MovieDetails = () => {
 
           <div>
             <h2>{movieDetails.title}</h2>
-            <p>User Score: {`${movieDetails.vote_average * 10}`}</p>
+            <p>User Score: {`${movieDetails.vote_average.toFixed(2)} | 10`}</p>
             <h3>Overview</h3>
             <p>{`${movieDetails.overview}`}</p>
             <h3>Genres</h3>
