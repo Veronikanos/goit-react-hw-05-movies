@@ -10,19 +10,24 @@ const trendingMovies = axios.create({
   },
 });
 
-export const fetchTrendingMovies = async (searchQuery, page = 1) => {
+// const movieDetails =
+
+export const fetchTrendingMovies = async () => {
   try {
     const { data } = await trendingMovies.get('/3/trending/movie/day', {});
-    // console.log(data);
-    // const images = data.hits.map(
-    //   ({ id, webformatURL, tags, largeImageURL }) => ({
-    //     id,
-    //     webformatURL,
-    //     tags,
-    //     largeImageURL,
-    //   })
-    // );
     return data.results;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const fetchMovieDetails = async movie_id => {
+  try {
+    const { data } = await trendingMovies.get(
+      `3/movie/${movie_id}, {language: "en-US"}`
+    );
+    console.log(data);
+    return data;
   } catch (error) {
     return error.message;
   }
