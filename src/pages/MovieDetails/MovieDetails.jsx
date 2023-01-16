@@ -1,13 +1,20 @@
 import { fetchMovieDetails } from 'components/service/api';
 import { useEffect, useState } from 'react';
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import style from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
   // console.log(useParams());
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
-  // console.log(res);
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     if (!movieId) return;
@@ -18,58 +25,67 @@ export const MovieDetails = () => {
     return null;
   }
 
-  return (
-    <div className={style.wrapper}>
-      {movieDetails && (
-        <div className={style.container}>
-          <div>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-              alt={movieDetails.title}
-              // width="500"
-            />
-          </div>
+  const backLink = location.state?.from ?? '/movies';
 
-          <div>
-            <div className={style.title}>
-              <h2>{movieDetails.title}</h2>
-              <p>({parseInt(movieDetails.release_date)})</p>
+  return (
+    <main>
+      <Link to={backLink}>Go Back</Link>
+      <div className={style.wrapper}>
+        {movieDetails && (
+          <div className={style.container}>
+            <div>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+                alt={movieDetails.title}
+                // width="500"
+              />
             </div>
-            <p>User Score: {`${movieDetails.vote_average.toFixed(2)} | 10`}</p>
-            <h3>Overview</h3>
-            <p>{`${movieDetails.overview}`}</p>
-            <h3>Genres</h3>
-            <p>{`${movieDetails.genres
-              .map(genre => genre.name)
-              .join(' / ')}`}</p>
+
+            <div>
+              <div className={style.title}>
+                <h2>{movieDetails.title}</h2>
+                <p>({parseInt(movieDetails.release_date)})</p>
+              </div>
+              <p>
+                User Score: {`${movieDetails.vote_average.toFixed(2)} | 10`}
+              </p>
+              <h3>Overview</h3>
+              <p>{`${movieDetails.overview}`}</p>
+              <h3>Genres</h3>
+              <p>{`${movieDetails.genres
+                .map(genre => genre.name)
+                .join(' / ')}`}</p>
+            </div>
           </div>
-        </div>
-      )}
-      <hr />
-      <p>Additional information</p>
-      <ul>
-        <li>
-          <NavLink
-            style={({ isActive }) => ({
-              color: isActive ? '#b92121' : 'inherit',
-            })}
-            to="cast"
-          >
-            Cast
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            style={({ isActive }) => ({
-              color: isActive ? '#b92121' : 'inherit',
-            })}
-            to="reviews"
-          >
-            Reviews
-          </NavLink>
-        </li>
-      </ul>
-      <Outlet />
-    </div>
+        )}
+        <hr />
+        <p>Additional information</p>
+        <ul>
+          <li>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? '#b92121' : 'inherit',
+              })}
+              to="cast"
+              state={{ from: backLink }}
+            >
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? '#b92121' : 'inherit',
+              })}
+              to="reviews"
+              state={{ from: backLink }}
+            >
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+        <Outlet />
+      </div>
+    </main>
   );
 };

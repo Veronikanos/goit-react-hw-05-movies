@@ -10,7 +10,7 @@ export const Movies = () => {
   const movieToSearch = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    if (!movieToSearch) return null;
+    if (!movieToSearch) return;
 
     // console.log(searchedMovies);
     searchMovieByTitle(movieToSearch).then(data =>

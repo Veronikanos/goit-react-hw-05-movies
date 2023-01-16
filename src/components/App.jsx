@@ -13,56 +13,6 @@ import { Reviews } from './Reviews/Reviews';
 // import { useRef } from 'react';
 
 export const App = () => {
-  //   useEffect(() => {
-  //     const onFetchImage = async () => {
-  //       setIsLoading(true);
-  //       try {
-  //         const { images: result, totalImages: totalImg } = await fetchGallery(
-  //           query,
-  //           page
-  //         );
-  //         setResults([...results, ...result]);
-  //         setTotalImages(totalImg);
-  //       } catch (err) {
-  //         setError(err.message);
-  //         console.log(error);
-  //       } finally {
-  //         setIsLoading(false);
-  //       }
-  //     };
-
-  //     query && onFetchImage();
-  //     isFirstLoading.current = false;
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, [query, page]);
-
-  //   const startNewQuery = newQuery => {
-  //     setQuery(newQuery);
-  //     setPage(1);
-  //     setResults([]);
-  //     setTotalImages(0);
-  //   };
-
-  //   const onSubmitSearch = newQuery => {
-  //     if (query === newQuery) {
-  //       toast('The same query, try another one!');
-  //       return;
-  //     }
-  //     startNewQuery(newQuery);
-  //   };
-
-  //   const onLoadMoreClick = () => {
-  //     setPage(page + 1);
-  //   };
-
-  //   const getLargeImageURL = modalData => {
-  //     setModalImg(modalData);
-  //   };
-
-  //   const closeModal = () => {
-  //     setModalImg(null);
-  //   };
-
   return (
     <>
       <Navigation />
