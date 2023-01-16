@@ -15,10 +15,9 @@ export const Reviews = () => {
 
   return (
     <div>
-      {console.log(reviews)}
+      <hr />
       {reviews.length > 0 ? (
         <>
-          <hr />
           <ul>
             {reviews.map(item => {
               return (

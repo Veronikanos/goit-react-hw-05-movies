@@ -1,3 +1,4 @@
+import { MovieList } from 'components/MovieList/MovieList';
 import { fetchTrendingMovies } from 'components/service/api';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,15 +15,10 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Trending today</h1>
-      <ul>
-        {trendingMovies &&
-          trendingMovies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>
-          ))}
-      </ul>
+      <header>
+        <h1>Trending today</h1>
+      </header>
+      <main>{trendingMovies && <MovieList movies={trendingMovies} />}</main>
     </>
   );
 };

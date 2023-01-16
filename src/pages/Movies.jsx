@@ -19,7 +19,7 @@ export const Movies = () => {
   }, [movieToSearch]);
 
   const handleSubmit = async newQuery => {
-    console.log(newQuery);
+    // console.log(newQuery);
     setSearchParams({ query: newQuery });
   };
 
@@ -28,9 +28,7 @@ export const Movies = () => {
       <header>
         <SearchBar onSubmit={handleSubmit} />
       </header>
-      <main>
-        <MovieList movies={searchedMovies} />
-      </main>
+      <main>{searchedMovies && <MovieList movies={searchedMovies} />}</main>
     </>
   );
 };
