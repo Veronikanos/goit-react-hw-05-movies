@@ -7,8 +7,10 @@ export const Home = () => {
 
   useEffect(() => {
     fetchTrendingMovies().then(res => setTrendingMovies(res));
-    console.log(trendingMovies);
+    // console.log(trendingMovies);
   }, []);
+
+  if (!trendingMovies) return;
 
   return (
     <>

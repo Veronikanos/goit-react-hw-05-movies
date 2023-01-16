@@ -6,3 +6,11 @@
   display: flex;
   gap: 20px;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}

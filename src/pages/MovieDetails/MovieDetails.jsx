@@ -4,6 +4,7 @@ import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
+  // console.log(useParams());
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   // console.log(res);
@@ -13,9 +14,9 @@ export const MovieDetails = () => {
     fetchMovieDetails(movieId).then(details => setMovieDetails(details));
   }, [movieId]);
 
-  // if (!movieDetails) {
-  //   return null;
-  // }
+  if (!movieDetails) {
+    return null;
+  }
 
   return (
     <div className={style.wrapper}>
@@ -30,8 +31,10 @@ export const MovieDetails = () => {
           </div>
 
           <div>
-            <h2>{movieDetails.title}</h2>
-            <p>{parseInt(movieDetails.release_date)}</p>
+            <div className={style.title}>
+              <h2>{movieDetails.title}</h2>
+              <p>({parseInt(movieDetails.release_date)})</p>
+            </div>
             <p>User Score: {`${movieDetails.vote_average.toFixed(2)} | 10`}</p>
             <h3>Overview</h3>
             <p>{`${movieDetails.overview}`}</p>
@@ -47,7 +50,6 @@ export const MovieDetails = () => {
       <ul>
         <li>
           <NavLink
-            end
             style={({ isActive }) => ({
               color: isActive ? '#b92121' : 'inherit',
             })}
@@ -58,7 +60,6 @@ export const MovieDetails = () => {
         </li>
         <li>
           <NavLink
-            end
             style={({ isActive }) => ({
               color: isActive ? '#b92121' : 'inherit',
             })}

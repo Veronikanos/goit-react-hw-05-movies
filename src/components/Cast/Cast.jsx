@@ -14,9 +14,8 @@ export const Cast = () => {
     });
   }, [movieId]);
 
-  // if (!cast) {
-  //   return null;
-  // }
+  if (!cast) return;
+
   return (
     <>
       <hr />

@@ -13,7 +13,6 @@ export const Navigation = () => (
     </NavLink>
 
     <NavLink
-      end
       style={({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })}
       className={s.link}
       to="/movies"
