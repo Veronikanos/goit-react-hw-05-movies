@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './Cast.module.css';
 
-const Cast = () => {
+function Cast() {
   const [cast, setCast] = useState(null);
   const { movieId } = useParams();
   useEffect(() => {
@@ -41,8 +41,6 @@ const Cast = () => {
       </ul>
     </>
   );
-
-  // <h1>cast component for movie {movieId}</h1>;
-};
+}
 
 export default Cast;

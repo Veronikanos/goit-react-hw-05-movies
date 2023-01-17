@@ -1,13 +1,13 @@
 // import { useEffect, useState } from 'react';
-// import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
-// import { NotFoundPage } from 'pages/NotFoundPage';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { Home } from '../pages/Home';
-// import { Movies } from '../pages/Movies';
-// import { Cast } from './Cast/Cast';
-// import { Navigation } from './Navigation/Navigation';
-// import { Reviews } from './Reviews/Reviews';
+// import Home from '../pages/Home';
+// import Movies from '../pages/Movies';
+// import Cast from './Cast/Cast';
+// import Navigation from './Navigation/Navigation';
+// import Reviews from './Reviews/Reviews';
+// import MovieDetails from 'pages/MovieDetails/MovieDetails';
+// import NotFoundPage from 'pages/NotFoundPage';
 
 const Home = lazy(() => import('pages/Home'));
 const Navigation = lazy(() => import('./Navigation/Navigation'));
@@ -20,6 +20,13 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // import { useRef } from 'react';
+
+// lazy(() =>
+//     import(`../pages/${str}/${str}`).then(module => ({
+//     ...module,
+//     default: module[str],
+//   }))
+// );
 
 export const App = () => {
   return (

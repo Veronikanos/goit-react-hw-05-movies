@@ -6,20 +6,19 @@ This project was bootstrapped with
 You can find live page
 [here](https://veronikanos.github.io/goit-react-hw-05-movies/).
 
-This task was accomplished using react hooks and was refactored from class
+<!-- This task was accomplished using react hooks and was refactored from class
 components and lifecycle stages as it was at previous
-[version](https://github.com/Veronikanos/goit-react-hw-03-image-finder/).
+[version](https://github.com/Veronikanos/goit-react-hw-03-image-finder/). -->
 
 There is a separate file for each component in the src/components folder.
 Styling is done by CSS modules
 
 Coded by Tlostiuk Veronika.
 
-## Image Finder - keyword image search application using Pixabay API
+<!-- ## Image Finder - keyword image search application using Pixabay API
 
 #### Preview:
-
-https://user-images.githubusercontent.com/49239848/210173149-d0124bef-ec2d-43c9-b263-97cd4d22deeb.mp4
+ -->
 
 ---
 
