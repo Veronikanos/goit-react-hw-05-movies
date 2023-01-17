@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import s from './Navigation.module.css';
 
-export const Navigation = () => (
+const Navigation = () => (
   <nav>
     <NavLink
       end
@@ -21,3 +21,5 @@ export const Navigation = () => (
     </NavLink>
   </nav>
 );
+
+export default Navigation;

@@ -1,5 +1,5 @@
 import { fetchMovieDetails } from 'components/service/api';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import {
   Link,
   NavLink,
@@ -9,8 +9,7 @@ import {
 } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 
-export const MovieDetails = () => {
-  // console.log(useParams());
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();
@@ -84,8 +83,12 @@ export const MovieDetails = () => {
             </NavLink>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     </main>
   );
 };
+
+export default MovieDetails;

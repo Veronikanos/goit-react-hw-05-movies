@@ -1,9 +1,8 @@
 import { MovieList } from 'components/MovieList/MovieList';
 import { fetchTrendingMovies } from 'components/service/api';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-export const Home = () => {
+const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
@@ -22,3 +21,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
