@@ -7,7 +7,7 @@ import styles from './SearchBar.module.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const SearchBar = ({ onSubmit }) => {
+function SearchBar({ onSubmit }) {
   const [value, setValue] = useState('');
 
   const handleSubmit = e => {
@@ -54,8 +54,10 @@ export const SearchBar = ({ onSubmit }) => {
       </form>
     </header>
   );
-};
+}
 
 SearchBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+export default SearchBar;

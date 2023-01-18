@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './Navigation.module.css';
-// import c from 'classnames';
+// import classes from 'classnames';
 
 function Navigation() {
   return (
@@ -9,7 +9,7 @@ function Navigation() {
         end
         style={
           ({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })
-          // c(s.NavLink, { [s.active]: isActive })
+          // ({ isActive }) => classes(s.NavLink, { [s.active]: isActive })
         }
         className={s.link}
         to="/"
@@ -18,7 +18,10 @@ function Navigation() {
       </NavLink>
 
       <NavLink
-        style={({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })}
+        style={
+          ({ isActive }) => ({ color: isActive ? '#b92121' : 'inherit' })
+          // ({ isActive }) => classes(s.NavLink, { [s.active]: isActive })
+        }
         className={s.link}
         to="/movies"
       >
