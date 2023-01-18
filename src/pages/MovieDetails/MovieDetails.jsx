@@ -28,7 +28,9 @@ function MovieDetails() {
 
   return (
     <main>
-      <Link to={backLink}>Go Back</Link>
+      <button>
+        <Link to={backLink}>Go Back</Link>
+      </button>
       <div className={style.wrapper}>
         {movieDetails && (
           <div className={style.container}>
