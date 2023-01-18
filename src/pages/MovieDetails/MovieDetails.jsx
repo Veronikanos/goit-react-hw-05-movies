@@ -1,5 +1,5 @@
 import { fetchMovieDetails } from 'components/service/api';
-import { Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import {
   Link,
   NavLink,
@@ -38,7 +38,7 @@ function MovieDetails() {
               <img
                 src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
                 alt={movieDetails.title}
-                // width="500"
+                loading={lazy}
               />
             </div>
 

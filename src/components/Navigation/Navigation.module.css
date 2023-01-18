@@ -1,22 +1,12 @@
+nav {
+  color: black;
+  background-image: linear-gradient(to right, #5f5859, #6a82fb);
+}
+
 .link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
   font-weight: 500;
   font-size: 18px;
-  background-color: bisque;
-}
-
-.NavLink {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px;
-  font-weight: 500;
-  font-size: 18px;
-  background-color: bisque;
-}
-
-.NavLink.active {
-  border-bottom-color: blue;
-  color: blue;
 }

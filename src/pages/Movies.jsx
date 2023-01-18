@@ -12,14 +12,12 @@ function Movies() {
   useEffect(() => {
     if (!movieToSearch) return;
 
-    // console.log(searchedMovies);
     searchMovieByTitle(movieToSearch).then(data =>
       setSearchedMovies(data.results)
     );
   }, [movieToSearch]);
 
   const handleSubmit = async newQuery => {
-    // console.log(newQuery);
     setSearchParams({ query: newQuery });
   };
 
