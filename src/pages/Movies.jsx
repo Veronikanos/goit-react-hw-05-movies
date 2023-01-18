@@ -1,5 +1,5 @@
 import { searchMovieByTitle } from '../components/service/api';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchForm from '../components/SearchForm/SearchForm';
 import MovieList from '../components/MovieList/MovieList';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -26,7 +26,7 @@ function Movies() {
   return (
     <>
       <header>
-        <SearchBar onSubmit={handleSubmit} />
+        <SearchForm onSubmit={handleSubmit} />
       </header>
       <main>{searchedMovies && <MovieList movies={searchedMovies} />}</main>
     </>
